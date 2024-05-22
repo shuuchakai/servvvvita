@@ -1,0 +1,43 @@
+{
+  "name": "v-server",
+  "version": "2.0.0",
+  "description": "Server for vitatri.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shuuchakai/v-server.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Luis Cortés",
+  "contact": {
+    "email": "shuuchakai@outlook.com",
+    "instagram": "https://www.instagram.com/shuuchakai",
+    "twitter": "https://twitter.com/shuuchakai"
+  },
+  "license": "ISC",
+  "keywords": [
+    "server",
+    "vitatri"
+  ],
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mailgun.js": "^10.2.1",
+    "mongoose": "^8.3.3",
+    "morgan": "^1.10.0",
+    "openai": "^4.40.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
