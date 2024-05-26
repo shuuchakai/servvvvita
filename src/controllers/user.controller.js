@@ -11,7 +11,7 @@ import validatePassword from '../utils/auth/validatePassword.util.js';
 const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
     username: 'api',
-    key: process.env.MAILGUN_API_KEY || "f47d624b7c6bdf1db789f516677428a8-2175ccc2-16ccb79e",
+    key: process.env.MAILGUN_API_KEY,
 });
 
 export const register = async (req, res) => {
