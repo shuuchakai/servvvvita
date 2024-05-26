@@ -12,7 +12,7 @@ import profileRoutes from './routes/profile.routes.js';
 import userRoutes from './routes/user.routes.js';
 // import dietRoutes from './routes/diet.routes.js';
 import blogRoutes from './routes/blog.routes.js';
-
+import ingredientRoutes from './routes/ingredient.route.js';
 
 dotenv.config();
 
@@ -52,6 +52,8 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/users', userRoutes);
 // app.use('/api/diet', dietRoutes);
 app.use('/api/blog', blogRoutes);
+app.use('/api/ingredient', ingredientRoutes);
+
 
 // Connect to the database and start the server
 connectDB().then(() => {

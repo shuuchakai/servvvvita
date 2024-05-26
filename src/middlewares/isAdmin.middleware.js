@@ -1,6 +1,6 @@
 import User from '../models/user.model.js';
 
-export default async (req, res, next) => {
+const isAdmin = async (req, res, next) => {
     const { email, id } = req.body;
     try {
         const user = await User.findOne(id);
@@ -15,3 +15,5 @@ export default async (req, res, next) => {
         return res.status(500).json({ message: error.message });
     }
 };
+
+export default isAdmin;

@@ -1,5 +1,15 @@
 import { Schema, model } from 'mongoose';
 
+const NutrientSchema = new Schema({
+    amount: {
+        type: Number,
+        required: true
+    },
+    unit: {
+        type: String,
+        required: true
+    }
+});
 
 const IngredientSchema = new Schema({
     name: {
@@ -11,190 +21,60 @@ const IngredientSchema = new Schema({
         required: true
     },
     nutritional_values: {
-        type: {
-            calories: {
-                amount: Number,
-                unit: String
-            },
-            proteins: {
-                amount: Number,
-                unit: String
-            },
-            carbohydrates: {
-                amount: Number,
-                unit: String
-            },
-            fats: {
-                amount: Number,
-                unit: String
-            }
-        }
+        calories: NutrientSchema,
+        proteins: NutrientSchema,
+        carbohydrates: NutrientSchema,
+        fats: NutrientSchema
     },
     minerals: {
-        type: {
-            calcium: {
-                amount: Number,
-                unit: String
-            },
-            iron: {
-                amount: Number,
-                unit: String
-            },
-            magnesium: {
-                amount: Number,
-                unit: String
-            },
-            phosphorus: {
-                amount: Number,
-                unit: String
-            },
-            potassium: {
-                amount: Number,
-                unit: String
-            },
-            sodium: {
-                amount: Number,
-                unit: String
-            },
-            zinc: {
-                amount: Number,
-                unit: String
-            },
-            copper: {
-                amount: Number,
-                unit: String
-            },
-            manganese: {
-                amount: Number,
-                unit: String
-            },
-            selenium: {
-                amount: Number,
-                unit: String
-            }
-        }
+        calcium: NutrientSchema,
+        iron: NutrientSchema,
+        magnesium: NutrientSchema,
+        phosphorus: NutrientSchema,
+        potassium: NutrientSchema,
+        sodium: NutrientSchema,
+        zinc: NutrientSchema,
+        copper: NutrientSchema,
+        manganese: NutrientSchema,
+        selenium: NutrientSchema
     },
     vitamins: {
-        type: {
-            thiamin: {
-                amount: Number,
-                unit: String
-            },
-            niacin: {
-                amount: Number,
-                unit: String
-            },
-            vitaminb6: {
-                amount: Number,
-                unit: String
-            },
-            biotine: {
-                amount: Number,
-                unit: String
-            },
-            folate: {
-                amount: Number,
-                unit: String
-            },
-            vitamine: {
-                amount: Number,
-                unit: String
-            },
-            vitaminb12: {
-                amount: Number,
-                unit: String
-            },
-            vitamink: {
-                amount: Number,
-                unit: String
-            }
-        }
+        thiamin: NutrientSchema,
+        niacin: NutrientSchema,
+        vitaminb6: NutrientSchema,
+        biotine: NutrientSchema,
+        folate: NutrientSchema,
+        vitamine: NutrientSchema,
+        vitaminb12: NutrientSchema,
+        vitamink: NutrientSchema
     },
     aminoacids: {
-        type: {
-            tryptophan: {
-                amount: Number,
-                unit: String
-            },
-            threonine: {
-                amount: Number,
-                unit: String
-            },
-            isoleucine: {
-                amount: Number,
-                unit: String
-            },
-            leucine: {
-                amount: Number,
-                unit: String
-            },
-            lysine: {
-                amount: Number,
-                unit: String
-            },
-            methionine: {
-                amount: Number,
-                unit: String
-            },
-            cystine: {
-                amount: Number,
-                unit: String
-            },
-            phenylalanine: {
-                amount: Number,
-                unit: String
-            },
-            tyrosine: {
-                amount: Number,
-                unit: String
-            },
-            valine: {
-                amount: Number,
-                unit: String
-            },
-            arginine: {
-                amount: Number,
-                unit: String
-            },
-            histidine: {
-                amount: Number,
-                unit: String
-            },
-            alanine: {
-                amount: Number,
-                unit: String
-            },
-            asparticacid: {
-                amount: Number,
-                unit: String
-            },
-            glutamicacid: {
-                amount: Number,
-                unit: String
-            },
-            glycine: {
-                amount: Number,
-                unit: String
-            },
-            proline: {
-                amount: Number,
-                unit: String
-            },
-            serine: {
-                amount: Number,
-                unit: String
-            },
-            hydroxyproline: {
-                amount: Number,
-                unit: String
-            },
-            hydroxylysine: {
-                amount: Number,
-                unit: String
-            }
-        }
+        tryptophan: NutrientSchema,
+        threonine: NutrientSchema,
+        isoleucine: NutrientSchema,
+        leucine: NutrientSchema,
+        lysine: NutrientSchema,
+        methionine: NutrientSchema,
+        cystine: NutrientSchema,
+        phenylalanine: NutrientSchema,
+        tyrosine: NutrientSchema,
+        valine: NutrientSchema,
+        arginine: NutrientSchema,
+        histidine: NutrientSchema,
+        alanine: NutrientSchema,
+        asparticacid: NutrientSchema,
+        glutamicacid: NutrientSchema,
+        glycine: NutrientSchema,
+        proline: NutrientSchema,
+        serine: NutrientSchema,
+        hydroxyproline: NutrientSchema,
+        hydroxylysine: NutrientSchema
     },
     image: {
         type: String
     }
-})
+}, { timestamps: true });
+
+const Ingredient = model('Ingredient', IngredientSchema);
+
+export default Ingredient;

@@ -1,9 +1,11 @@
 import Profile from '../models/profile.model.js';
 
 export const createProfile = async (req, res) => {
-    const profile = req.body;
+    const { weight, height } = req.body;
 
-    const newProfile = new Profile(profile);
+    const bmi = weight / ((height / 100) ** 2);
+
+    const newProfile = new Profile({ ...req.body, bmi });
 
     try {
         await newProfile.save();

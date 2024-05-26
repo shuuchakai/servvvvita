@@ -1,24 +1,27 @@
 import { Schema, model } from 'mongoose';
 
-const MealSchema = new Schema({
-    time: {
+const dietSchema = Schema({
+    name: {
         type: String,
         required: true
     },
-    ingredients: {
-        type: [String],
-        required: true
-    }
-});
+    days: [
+        {
+            day: {
+                type: String,
+                enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+            },
+            foods: [
+                {
+                    type: Schema.Types.ObjectId,
+                    ref: 'Recipe',
+                    required: true
+                }
+            ]
+        }
+    ]
+}, { timestamps: true });
 
-const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const Diet = model('Diet', dietSchema);
 
-const DietSchema = new Schema({
-    user_id: {
-        type: String,
-        required: true
-    },
-    ...daysOfWeek.reduce((acc, day) => ({ ...acc, [day]: [MealSchema] }), {})
-});
-
-export default model('Diet', DietSchema);
+export default Diet;

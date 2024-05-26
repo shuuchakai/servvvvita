@@ -21,7 +21,7 @@ const profileSchema = new Schema({
         required: true,
         trim: true,
     },
-    biological_sex: {
+    biologicalSex: {
         type: String,
         required: true,
         trim: true,
@@ -31,50 +31,50 @@ const profileSchema = new Schema({
         required: true,
         trim: true,
     },
-    blood_type: {
+    exerciseFrequency: {
         type: String,
         required: true,
         trim: true,
     },
-    physical_activity: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    allergies: {
+    allergy: {
         type: Array,
         required: true,
         trim: true,
     },
-    diseases: {
+    disease: {
         type: Array,
         required: true,
         trim: true,
     },
-    medications: {
+    medication: {
         type: Array,
         required: true,
         trim: true,
     },
-    water_intake_amount: {
-        type: String,
-        required: true,
-    },
-    water_intake_unit: {
-        type: String,
-        required: true,
-    },
-    sleep_hours: {
+    sleepHours: {
         type: Number,
         required: true,
         trim: true,
     },
-    goal: {
+    occupation: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
-    specific_goal: {
+    goals: {
+        type: Array,
+        required: true,
+    },
+    birthday: {
         type: String,
+        required: true,
+    },
+    phone: {
+        type: String,
+        required: true,
+    },
+    bmi: {
+        type: Number,
         required: true,
     }
 }, { timestamps: true });
