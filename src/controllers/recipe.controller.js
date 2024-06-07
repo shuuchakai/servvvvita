@@ -3,7 +3,7 @@ import Recipe from '../models/recipe.model.js';
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY || "sk-proj-UYwplLAsEuTiUif3ucOwT3BlbkFJioUsVwH9vQLxBeNKUoJz",
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 export const generateRecipe = async (req, res) => {
