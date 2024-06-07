@@ -1,10 +1,10 @@
 import { Router } from 'express';
 
-import { createProfile, getProfiles } from '../controllers/profile.controller.js';
+import { createProfile, getProfile } from '../controllers/profile.controller.js';
 
 const router = Router();
 
 router.post('/create', createProfile);
-router.post('/get', getProfiles);
+router.post('/get', getProfile)
 
 export default router;

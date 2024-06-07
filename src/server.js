@@ -13,6 +13,10 @@ import userRoutes from './routes/user.routes.js';
 // import dietRoutes from './routes/diet.routes.js';
 import blogRoutes from './routes/blog.routes.js';
 import ingredientRoutes from './routes/ingredient.route.js';
+import consumptionRoutes from './routes/consumption.routes.js';
+import imageRoutes from './routes/image.routes.js';
+import exerciseRoutes from './routes/exercise.routes.js';
+import recipeRoutes from './routes/recipe.routes.js';
 
 dotenv.config();
 
@@ -20,25 +24,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 // Add the allowed origins or routes where the API can be accessed; in this case, the frontend URLs.
-const origins = ["http://localhost:5173", "http://localhost:5172"];
-
-app.use(helmet());
-app.use(cookieParser());
-
-// CORS middleware. Sometimes it gives errors idk why.
-app.use(
-    cors({
-        origin(requestOrigin, callback) {
-            if (!requestOrigin || origins.includes(requestOrigin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed."), false);
-            }
-        },
-        credentials: true,
-    })
-);
-
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
@@ -53,7 +39,10 @@ app.use('/api/users', userRoutes);
 // app.use('/api/diet', dietRoutes);
 app.use('/api/blog', blogRoutes);
 app.use('/api/ingredient', ingredientRoutes);
-
+app.use('/api/consumption', consumptionRoutes);
+app.use('/api/image', imageRoutes);
+app.use('/api/exercise', exerciseRoutes);
+app.use('/api/recipe', recipeRoutes);
 
 // Connect to the database and start the server
 connectDB().then(() => {

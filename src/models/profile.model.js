@@ -6,76 +6,82 @@ const profileSchema = new Schema({
         required: true,
         trim: true,
     },
-    age: {
-        type: Number,
+    goal: {
+        type: String,
         required: true,
-        trim: true,
     },
-    weight: {
-        type: Number,
+    goalSpeed: {
+        type: String,
         required: true,
-        trim: true,
     },
-    height: {
-        type: Number,
+    goalWeight: {
+        type: String,
         required: true,
-        trim: true,
     },
     biologicalSex: {
         type: String,
         required: true,
-        trim: true,
     },
-    gender: {
+    
+    height: {
         type: String,
-        required: true,
-        trim: true,
+        required: true
     },
-    exerciseFrequency: {
+    heightUnit: {
         type: String,
-        required: true,
-        trim: true,
+        required: true
     },
-    allergy: {
+    weight: {
+        type: String,
+        required: true
+    },
+    weightUnit: {
+        type: String,
+        required: true
+    },
+    activityLevel: {
+        type: String,
+        required: true
+    },
+    selectedFoods: {
         type: Array,
-        required: true,
-        trim: true,
-    },
-    disease: {
-        type: Array,
-        required: true,
-        trim: true,
-    },
-    medication: {
-        type: Array,
-        required: true,
-        trim: true,
-    },
-    sleepHours: {
-        type: Number,
-        required: true,
-        trim: true,
-    },
-    occupation: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    goals: {
-        type: Array,
-        required: true,
-    },
-    birthday: {
-        type: String,
-        required: true,
-    },
-    phone: {
-        type: String,
-        required: true,
+        required: true
     },
     bmi: {
-        type: Number,
-        required: true,
+        type: String,
+        required: true
+    },
+    bmr: {
+        type: String,
+        required: true
+    },
+    tdee: {
+        type: String,
+        required: true
+    },
+    adjustedCalories: {
+        type: String,
+        required: true
+    },
+    macros: {
+        type: Object,
+        required: true
+    },
+    minerals: {
+        type: Object,
+        required: true
+    },
+    vitamins: {
+        type: Object,
+        required: true
+    },
+    waterLiters: {
+        type: String,
+        required: true
+    },
+    waterGlasses: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 

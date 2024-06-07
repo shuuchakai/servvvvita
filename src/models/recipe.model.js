@@ -1,27 +1,34 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const recipeSchema = new Schema({
-    name: {
+const recipeSchema = new mongoose.Schema({
+    foods: [
+        {
+            id: String,
+            name: String,
+            kcal: Number,
+            protein: Number,
+            carbs: Number,
+            fat: Number,
+        },
+    ],
+    title: {
         type: String,
-        required: true
+        required: true,
     },
-    ingredients: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Ingredient',
-        required: true
-    }],
     instructions: {
-        type: String
-    },
-    preparationTime: {
-        type: Number
-    },
-    type: {
         type: String,
-        enum: ['breakfast', 'lunch', 'dinner', 'snack'],
-        required: true
-    }
+        required: true,
+    },
+    recommendations: {
+        type: String,
+        required: false,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
-const Recipe = model('Recipe', recipeSchema);
+const Recipe = mongoose.model('Recipe', recipeSchema);
+
 export default Recipe;
